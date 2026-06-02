@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 :root{
     --corBody:rgb(245, 245, 245);
     --corHeader: white;
@@ -17,7 +16,6 @@
     --bigRadius:10px;
     
 }
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--corBody);
@@ -25,7 +23,6 @@ body {
 }
 
 /* HEADER */
-
 header {
     display: flex;
     justify-content: space-between;
@@ -40,27 +37,22 @@ a.arca{
     color: black;
     text-decoration: none;
 }
-
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
 .logo h1 {
     font-size: 42px;
 }
-
 .logo img {
     width: 50px;
 }
-
 .icones img {
     width: 180px;
 }
 
 /*PÁGINA 1 DENÚNCIAS*/
-
 .container {
     display: flex;
     gap: 50px;
@@ -68,29 +60,21 @@ a.arca{
 }
 
 /*LADO ESQUERDO*/
-
 .tipo_denuncia {
     width: 250px;
-
     background-color: var(--corCard);
-
     padding: 25px;
-
     border-radius: 10px;
-
     box-shadow: 0 2px 10px var(--corSombra);
 }
-
 .tipo_denuncia h3 {
     margin-bottom: 20px;
 }
-
 .tipo_denuncia label {
     display: block;
     margin-bottom: 15px;
     cursor: pointer;
 }
-
 .info {
     margin-top: 40px;
     font-size: 14px;
@@ -98,58 +82,43 @@ a.arca{
 }
 
 /*LADO DIREITO*/
-
 .formulario {
     flex: 1;
-
     background-color: var(--corCard);
-
     padding: 30px;
-
     border-radius: 10px;
-
     box-shadow: 0 2px 10px var(--corSombra);
 }
-
 .formulario h3 {
     margin-bottom: 20px;
 }
-
 .linha {
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
 }
-
 .campo {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
-
 .campo label {
     margin-bottom: 8px;
     font-weight: bold;
 }
-
 .campo input,
 .campo textarea {
     padding: 12px;
     border: 1px solid var(--corBorderCampo);
     border-radius: 8px;
-
     font-size: 14px;
 }
-
 .rua {
     flex: 3;
 }
-
 .numero {
     flex: 1;
 }
-
-
 .botoes {
     margin-top: 25px;
 
@@ -157,7 +126,6 @@ a.arca{
     justify-content: space-between;
     align-items: center;
 }
-
 .upload {
     background-color: var(--corCard);
     border: 1px solid var(--corBorderCampo);
@@ -165,29 +133,9 @@ a.arca{
     border-radius: 8px;
     cursor: pointer;
 }
-
-.continuar {
-    background-color: var(--corBotao);
-    border: none;
-    padding: 14px 28px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    width: 133px;
-    height: 45px;
-    margin-left: auto;
-
-}
-
-.letrabotao {
-    text-decoration: none;
-    color: black;
-}
-
-.continuar:hover {
+.botes3continuar:hover {
     background-color: var(--corBotaoHover);
 }
-
 .acoes {
     display: flex;
     justify-content: space-between;
@@ -196,15 +144,12 @@ a.arca{
     width: 100%;
 }
 
-
 /* RESPONSIVO */
-
 @media(max-width: 900px) {
 
     .container {
         flex-direction: column;
     }
-
     .linha {
         flex-direction: column;
     }
@@ -219,7 +164,6 @@ a.arca{
 }
 
 /*PÁGINA 2 DENÚNCIAS*/
-
 .container2 {
     display: flex;
     gap: 50px;
@@ -228,15 +172,32 @@ a.arca{
     margin-top: 80px;
     flex-wrap: wrap;
 }
-
+.container2_1{
+    background-color: var(--corCard);
+    border-radius: var(--bigRadius);
+    padding: 60px;
+    max-width: 600px;
+    padding: 40px;
+    background-color: var(--corCard);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--corSombra);
+    margin-bottom: 40px;
+}
 .ladoEsquerdo {
     line-height: 1.8;
     gap: 50px;
-
 }
 .ladoEsquerdo p {
     font-size:small;
 
+}
+.ladoEsquerdo h2{
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+.ladoEsquerdo ul{
+    font-size: 18px;
+    line-height: 1.5;
 }
 .ladoDireito{
     display: flex;
@@ -245,7 +206,6 @@ a.arca{
     height: 550px;
     padding: 60px;
 }
-
 .cardLadoDireito {
     max-width: 400px;
     padding: 40px;
@@ -254,19 +214,15 @@ a.arca{
     border-radius: 12px;
     box-shadow: 0 4px 12px var(--corSombra);
     margin-bottom: 40px;
-    
 }
-
 .cardLadoDireito li {
     margin-bottom: 10px;
     line-height: 1.4;
     font-size:large;
 }
-
 .cardLadoDireito ul {
     padding-left: 20px;
 }
-
 .cardLadoDireito h4 {
     margin-bottom: 12px;
     color: #f43d3ddd;
@@ -275,13 +231,10 @@ a.arca{
 }
 
 /*PÁGINA 3 DENÚNCIAS*/
-
 .container3{
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    
-
 }
 
 .cardCheck{
@@ -306,14 +259,12 @@ a.arca{
     margin-bottom: 10px;
     line-height: 1.4;
 }
-
 .cardCheck h1{
     margin-top: 12px;
 }
 .cardCheck h2{
     color:  var(--corBotao);
 }
-
 .protocolo{
     display: flex;
     align-items: center;
@@ -340,6 +291,8 @@ a.arca{
     height: 45px;
     text-align: center;
     transition: background .2s, border-color .2s, transform .15s;
+    color: black;
+    text-decoration: none;
 }
 .botoes2:hover{
     background: var(--corBotaoHover);
@@ -348,8 +301,6 @@ a.arca{
 }
 
 /*PÁGINA 1 ADM*/
-
-
 .secaoInicial {
     display:flex;
     flex-direction: row;
@@ -362,7 +313,6 @@ a.arca{
     align-items:stretch;
     flex-wrap: wrap;
 }
-
 .ADMEsquerdo {
     flex:1;
     display:flex;
@@ -372,7 +322,6 @@ a.arca{
     justify-content: center;
     flex-wrap: wrap;
 }
-
 .ADMDireito{
     flex:1;
     display:flex;
@@ -381,7 +330,6 @@ a.arca{
     gap:15px;
     flex-wrap: wrap;
 }
-
 .carrossel {
     gap:15px;
     position: relative;
@@ -391,7 +339,6 @@ a.arca{
     overflow: hidden;
     background: #f0f0f0;
 }
-
 .imagens {
     position: relative;
     width: 100%;
@@ -399,7 +346,6 @@ a.arca{
     display: flex;
     transition: transform 0.5s ease;
 }
-
 .slide {
     min-width: 100%;
     height: 100%;
@@ -408,13 +354,11 @@ a.arca{
     justify-content: center;
     background: #f0f0f0;
 }
-
 .slide img {
     width: 100%;
     height: 100%;
     object-fit:cover;
 }
-
 .seta {
     position: absolute;
     top: 50%;
@@ -429,19 +373,15 @@ a.arca{
     border-radius: 4px;
     transition: all 0.3s ease;
 }
-
 .seta:hover {
     background: rgba(0, 0, 0, 0.9);
 }
-
 .seta.esquerda {
     left: 10px;
 }
-
 .seta.direita {
     right: 10px;
 }
-
 .indicadores {
     position: absolute;
     bottom: 15px;
@@ -451,7 +391,6 @@ a.arca{
     gap: 10px;
     z-index: 10;
 }
-
 .indic {
     width: 10px;
     height: 10px;
@@ -460,7 +399,6 @@ a.arca{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .indic.ativo {
     background: white;
     transform: scale(1.3);
@@ -484,6 +422,31 @@ a.arca{
     cursor: pointer;
     transition: background .2s, border-color .2s, transform .15s;
     font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+.botoes3continuar{
+    background: var(--corBotao);
+    border: none;
+    border-radius: var(--smallRadius);
+    padding: 14px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background .2s, border-color .2s, transform .15s;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    width: 133px;
+    height: 45px;
+    margin-left: auto;
+}
+.botoes3continuar:hover{
+    background: var(--corBotaoHover);
+    border-color: var(--corBotao);
+    transform: translateY(-2px);
 }
 .botoes3:hover{
     background: var(--corBotaoHover);
@@ -512,11 +475,9 @@ a.arca{
 }
 
 /*PÁGINA ATENDIMENTOS*/
-
 .container4{
     padding: 30px;
 }
-
 .banner{
     border-radius: 8px;
     display:flex;
@@ -530,7 +491,6 @@ a.arca{
     min-width: 300px;
     min-height: auto;
 }
-
 .topo-filtros{
     display:flex;
     justify-content:space-between;
@@ -538,49 +498,40 @@ a.arca{
     margin-bottom:20px;
     flex-wrap: wrap;
 }
-
 .filtros{
     display:flex;
 }
-
 .filtros button{
     padding:10px 25px;
     border:1px solid #BDBDBD;
     background:white;
     cursor:pointer;
 }
-
 .filtros button:first-child{
     border-radius:5px 0 0 5px;
 }
-
 .filtros button:last-child{
     border-radius:0 5px 5px 0;
 }
-
 .filtros .ativo{
     background:#73B055;
     color:white;
 }
-
 .acoes{
     display:flex;
     gap:15px;
 }
-
 .acoes button{
     border:none;
     background:none;
     font-size:18px;
     cursor:pointer;
 }
-
 .lista{
     display:flex;
     flex-direction:column;
     gap:15px;
 }
-
 .card{
     border:1px solid #BDBDBD;
     border-radius:8px;
@@ -591,47 +542,38 @@ a.arca{
     flex-wrap: wrap;
     gap: 15px;
 }
-
 .usuario{
     display:flex;
     align-items:center;
     gap:15px;
     width:260px;
 }
-
 .foto{
     width:40px;
     height:40px;
-
     background:#F2F2F2;
     border-radius:4px;
-
     display:flex;
     justify-content:center;
     align-items:center;
 }
-
 .usuario h3{
     margin:0;
     font-size:22px;
 }
-
 .usuario p{
     margin-top:5px;
     font-size:13px;
     color:#777;
 }
-
 .tipo p{
     font-size:12px;
     color:#888;
 }
-
 .tipo h4{
     color:#4EAA41;
     margin-top:5px;
 }
-
 .data{
     display:flex;
     align-items:center;
@@ -639,7 +581,6 @@ a.arca{
     color:#777;
     font-size:13px;
 }
-
 .status{
     padding:8px 18px;
     border-radius:5px;
@@ -647,7 +588,6 @@ a.arca{
     font-weight:600;
     background-color: var(--corBotao);
     border-color: var(--corBorderCampo);
-
 }
 .statusInd{
     padding:8px 18px;
@@ -656,28 +596,23 @@ a.arca{
     font-weight:600;
     background-color: rgba(246, 78, 78, 0.764);
 }
-
 .nova{
     background:#73B055;
 }
-
 .analise{
     background:#B8A5D9;
 }
-
 .indeferida{
     background:#E8A0A0;
 }
 
 /*PÁGINA PARCEIROS*/
-
 .foto{
     width:50px;
     height:50px;
     border-radius:50%;
     overflow:hidden;
 }
-
 .foto img{
     width:100%;
     height:100%;

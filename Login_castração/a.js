@@ -32,14 +32,14 @@ if (btnLogin) {
         let senha = document.getElementById('loginSenha').value;
 
         if (usuario === 'tutor' && senha === '123456') {
-            window.location.href = 'painel-tutor.html';
+            window.location.href = '../Adoção_inicial/telainicial.html';
         }
 
         else if (usuario === 'candidato' && senha === 'cand!098') {
-            window.location.href = 'painel-candidato.html';
+            window.location.href = '../Adoção_inicial/telainicial.html';
         }
 
-        else if (usuario === 'ong' && senha === 'ong$-135') {
+        else if (usuario === 'Ong' && senha === 'ong$-135') {
             window.location.href = '../Ong/index.html';
         }
 

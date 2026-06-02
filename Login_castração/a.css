@@ -3,16 +3,52 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+:root{
+    --corBody:rgb(245, 245, 245);
+    --corHeader:white;
+    --corBotão:#a8c686;
+    --corBotaoHover:rgb(136, 182, 106);
+    --corSombra:rgba(0, 0, 0, 0.1);
+    --corCard:white;
+    --corBorderCampo:#ccc;
+
+    --smallRadius:8px;
+    --bigRadius:10px;
 }
+body {
+    display: flex;
+    font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    background: linear-gradient(#68b96577,rgba(106, 182, 135, 0.705));
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: row;
+    position: relative;
+}
+.container_login{
+    display: flex;
+    align-items: center;
+    gap:40px;
+}
+.banner{
+    height:90vh;
+    width:auto;
+    min-width: 150px;
+    min-height: 150px;
+}
+    
 .tela {
     max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
+    max-height: min-content;
+    padding: 60px;
     border: 1px solid rgb(204, 204, 204);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--corCard);
+    border-radius: var(--bigRadius);
+    gap: 60px;
+    flex-wrap: wrap;
+    
 }
 input, select, button {
     display: block;
@@ -20,23 +56,43 @@ input, select, button {
     margin: 10px 0;
     padding: 8px;
     border: 1px solid rgb(170, 170, 170);
+    border-radius: var(--smallRadius);
 }
 button {
+    background-color: var(--corBotão);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
     cursor: pointer;
-    background-color: rgb(240, 240, 240);
+    font-weight: bold;
+    width: 133px;
+    height: 45px;
+    margin-left: auto;
+}
+.letrabotao{
+    text-decoration: none;
+    color: black;
 }
 button:hover {
-    background-color: rgb(224, 224, 224);
+    background-color: var(--corBotaoHover)
 }
+
 .subtitulo {
     text-align: center;
     margin-bottom: 20px;
 }
+.href{
+    border-radius: var(--smallRadius);
+}
 .flex-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
+}
+.flex-row a{
+    font-size: 12px;
+    padding: 6px 10px;
 }
 .flex-row .tela {
     flex: 1 1 300px;
