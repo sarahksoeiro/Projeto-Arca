@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar denúncia</title>
+    <link rel="stylesheet" href="../ADM_denúncias/style.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1><a href="../Adoção_Inicial/telainicial.html" class="arca">Arca</a></h1>
+            <img src="img/icone_pata.png" alt="">
+        </div>
+
+        <div class="icones">
+            <img src="img/icone_header.png" alt="">
+        </div>
+    </header>
+    
+    <main class="container2">
+        <section class="ladoEsquerdo">
+            <label for="identificacao">
+                <h4>Selecione o tipo de identificação:</h4>
+                <br>
+                <input type="radio" name="identificacao" value="a"> Anônimo
+                <br>
+                <input type="radio" name="identificacao" value="i"> Identificado (vínculado à conta)
+            </label>
+            <br>
+            <br>
+            <p>Você pode enviar de forma anônima ou
+                vincular à sua conta para acompanhar a
+                denúncia.</p>
+            <br>
+            <br>
+            <label for="atualizacoes">
+                <h4>Selecione o tipo de atualização:</h4>
+                <br>
+                <input type="radio" name="atualizacoes" value="sim"> Não receber
+                <br>
+                <input type="radio" name="atualizacoes" value="nao"> Receber por e-mail ou SMS
+                <br>
+                <br>
+                <div class="campo">
+                    <input type="text" id="atualizacoes" placeholder="Digite seu e-mail ou telefone">
+                </div>
+            </label>
+            <br>
+            <p>Receba notificações sobre o andamento da
+                denúncia.</p>
+        </section>
+        <section class="ladoDireito">
+            <section class="cardLadoDireito">
+                <h4>Importante!</h4>
+                <ul>
+                    <li>Denúncias com evidências têm maior prioridade</li>
+                    <li>Informações falsas podem prejudicar o atendimento</li>
+                    <li>Sempre informe o local com precisão</li>
+                </ul>
+            </section>
+            <div class="continuar">
+                <a href="denuncia3.html" class="letrabotao">Continuar</a>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
