@@ -32,19 +32,19 @@ if (btnLogin) {
         let senha = document.getElementById('loginSenha').value;
 
         if (usuario === 'tutor' && senha === '123456') {
-            window.location.href = '../Adoção_inicial/telainicial.html';
+            window.location.href = './Adoção_inicial/telainicial.html';
         }
 
         else if (usuario === 'candidato' && senha === 'cand!098') {
-            window.location.href = '../Adoção_inicial/telainicial.html';
+            window.location.href = './Adoção_inicial/telainicial.html';
         }
 
         else if (usuario === 'Ong' && senha === 'ong$-135') {
-            window.location.href = '../Ong/index.html';
+            window.location.href = './Ong/index.html';
         }
 
         else if (usuario === 'prefeitura' && senha === 'pref@456') {
-            window.location.href = '../ADM_denúncias/admHome.html';
+            window.location.href = './ADM_denúncias/admHome.html';
         }
 
         else {
