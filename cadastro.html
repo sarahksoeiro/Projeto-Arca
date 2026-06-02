@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+.tela {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid rgb(204, 204, 204);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+input, select, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid rgb(170, 170, 170);
+}
+button {
+    cursor: pointer;
+    background-color: rgb(240, 240, 240);
+}
+button:hover {
+    background-color: rgb(224, 224, 224);
+}
+.subtitulo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.flex-row .tela {
+    flex: 1 1 300px;
+    min-width: 250px;
+    margin: 0;
+}
+.card {
+    border: 1px solid rgb(204, 204, 204);
+    padding: 15px;
+    margin: 10px;
+    flex: 1 1 280px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08);
+}
+.text-center {
+    text-align: center;
+}
+input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: rgb(102, 102, 102);
+}
+.flex-row button {
+    width: auto;
+    min-width: 200px;
+}
+input[type="file"] {
+    border: 1px solid rgb(170, 170, 170);
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+a {
+    display: inline-block;
+    background-color: rgb(240, 240, 240);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 8px 15px;
+    margin: 10px 5px;
+    border: 1px solid rgb(170, 170, 170);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    width: auto;
+}
+a:hover {
+    background-color: rgb(224, 224, 224);
+}

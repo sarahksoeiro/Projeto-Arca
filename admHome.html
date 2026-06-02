@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arca - Plataforma de Adoção</title>
+    <link rel="stylesheet" href="../Ong/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- HEADER -->
+        <header class="topo">
+            <div class="prefeitura">
+                <h1 class="logo" onclick="irPara('inicio')">Arca🐾</h1>
+            </div>
+            <input type="text" class="busca" placeholder="Search">
+            <div class="icones">
+                <button class="sino" onclick="abrirPainel('painel-notificacoes')" title="Notificações">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                    </svg>
+                    <span class="notif-badge" id="badgeNotif">3</span>
+                </button>
+                <button class="menu" onclick="abrirPainel('painel-configuracoes')" title="Configurações">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
+                </button>
+                <button class="perfil" onclick="abrirPainel('painel-perfil')" title="Perfil">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- PAINEL NOTIFICAÇÕES -->
+        <div class="painel-overlay" id="painel-notificacoes" onclick="fecharPainelOverlay(event, 'painel-notificacoes')">
+            <div class="painel">
+                <div class="painel-header">
+                    🔔 Notificações
+                    <button class="painel-fechar" onclick="fecharPainel('painel-notificacoes')">✕</button>
+                </div>
+                <div class="painel-body">
+                    <div class="notif-item">
+                        <div class="notif-icon">✅</div>
+                        <div class="notif-texto">
+                            <strong>Solicitação aprovada!</strong>
+                            <span>Sua adoção da Pipoca foi aprovada. Parabéns!</span><br>
+                            <span style="color:#aaa;font-size:11px;">Hoje, 10:32</span>
+                        </div>
+                    </div>
+                    <div class="notif-item">
+                        <div class="notif-icon">🔍</div>
+                        <div class="notif-texto">
+                            <strong>Solicitação em análise</strong>
+                            <span>Seu pedido para adotar o Chico está sendo analisado.</span><br>
+                            <span style="color:#aaa;font-size:11px;">Ontem, 15:10</span>
+                        </div>
+                    </div>
+                    <div class="notif-item">
+                        <div class="notif-icon">❌</div>
+                        <div class="notif-texto">
+                            <strong>Castração cancelada</strong>
+                            <span>Não foi possível prosseguir com a castração da Mia.</span><br>
+                            <span style="color:#aaa;font-size:11px;">03/05/2026</span>
+                        </div>
+                    </div>
+                    <div class="notif-item">
+                        <div class="notif-icon">🐾</div>
+                        <div class="notif-texto">
+                            <strong>Novo animal disponível</strong>
+                            <span>Um novo gatinho foi cadastrado pela ONG Amor 4 Patas.</span><br>
+                            <span style="color:#aaa;font-size:11px;">01/05/2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAINEL CONFIGURAÇÕES -->
+        <div class="painel-overlay" id="painel-configuracoes" onclick="fecharPainelOverlay(event, 'painel-configuracoes')">
+            <div class="painel">
+                <div class="painel-header">
+                    ⚙️ Configurações
+                    <button class="painel-fechar" onclick="fecharPainel('painel-configuracoes')">✕</button>
+                </div>
+                <div class="painel-body">
+                    <div class="config-item">
+                        <div class="config-esq">
+                            <span>🔔</span>
+                            <span>Notificações push</span>
+                        </div>
+                        <button class="toggle on" onclick="alternarToggle(this)"></button>
+                    </div>
+                    <div class="config-item">
+                        <div class="config-esq">
+                            <span>✉️</span>
+                            <span>Notificações por e-mail</span>
+                        </div>
+                        <button class="toggle on" onclick="alternarToggle(this)"></button>
+                    </div>
+                    <div class="config-item">
+                        <div class="config-esq">
+                            <span>🌙</span>
+                            <span>Modo escuro</span>
+                        </div>
+                        <button class="toggle" onclick="alternarToggle(this)"></button>
+                    </div>
+                    <div class="config-item">
+                        <div class="config-esq">
+                            <span>📍</span>
+                            <span>Compartilhar localização</span>
+                        </div>
+                        <button class="toggle" onclick="alternarToggle(this)"></button>
+                    </div>
+                    <div class="config-item">
+                        <div class="config-esq">
+                            <span>🌐</span>
+                            <span>Idioma</span>
+                        </div>
+                        <select class="config-select">
+                            <option>Português</option>
+                            <option>English</option>
+                            <option>Español</option>
+                        </select>
+                    </div>
+                    <div class="config-item">
+                        <div class="config-esq">
+                            <span>🔒</span>
+                            <span>Privacidade do perfil</span>
+                        </div>
+                        <select class="config-select">
+                            <option>Público</option>
+                            <option>Privado</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAINEL PERFIL -->
+        <div class="painel-overlay" id="painel-perfil" onclick="fecharPainelOverlay(event, 'painel-perfil')">
+            <div class="painel">
+                <div class="painel-header">
+                    👤 Meu Perfil
+                    <button class="painel-fechar" onclick="fecharPainel('painel-perfil')">✕</button>
+                </div>
+                <div class="painel-body">
+                    <div class="perfil-topo">
+                        <div class="perfil-avatar">🐾</div>
+                        <div class="perfil-nome">Ong</div>
+                    </div>
+                    <div class="perfil-stats">
+                        <div class="stat-box">
+                            <strong>3</strong>
+                            <span>Adoções</span>
+                        </div>
+                        <div class="stat-box">
+                            <strong>6</strong>
+                            <span>Animais</span>
+                        </div>
+                        <div class="stat-box">
+                            <strong>2</strong>
+                            <span>Pendentes</span>
+                        </div>
+                    </div>
+                    <div class="perfil-menu-item" onclick="irPara('meus-animais'); fecharPainel('painel-perfil')">
+                        <span>🐾</span><span>Meus animais</span>
+                    </div>
+                    <div class="perfil-menu-item" onclick="irPara('solicitacoes'); fecharPainel('painel-perfil')">
+                        <span>✉️</span><span>Minhas solicitações</span>
+                    </div>
+                    <div class="perfil-menu-item" onclick="indisponivel()">
+                        <span>📝</span><span>Editar perfil</span>
+                    </div>
+                    <div class="perfil-menu-item" onclick="indisponivel()">
+                        <span>🔒</span><span>Alterar senha</span>
+                    </div>
+                    <div class="perfil-menu-item" onclick="indisponivel()">
+                        <span>❓</span><span>Ajuda e suporte</span>
+                    </div>
+                    <button class="btn-sair" onclick="indisponivel()">Sair da conta</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="conteudo">
+            <!-- PÁGINA INICIAL -->
+            <section id="inicio" class="pagina ativa">
+                <div class="secaoInicial">
+                    <!-- CARROSSEL -->
+                    <div class="carrossel">
+                        <div class="imagens">
+                            <div class="slide">
+                                <img src="../Ong/Imagens/adocao-propaganda.png" alt="Imagem 1 do carrossel">
+                            </div>
+                            <div class="slide">
+                                <img src="../Ong/Imagens/propaganda02.png" alt="Imagem 2 do carrossel">
+                            </div>
+                            <div class="slide">
+                                <img src="../Ong/Imagens/propaganda03.png" alt="Imagem 3 do carrossel">
+                            </div>
+                        </div>
+                        <button class="seta esquerda" onclick="mudarSlide(-1)">‹</button>
+                        <button class="seta direita" onclick="mudarSlide(1)">›</button>
+                        <div class="indicadores">
+                            <span class="indic ativo" onclick="irSlide(0)"></span>
+                            <span class="indic" onclick="irSlide(1)"></span>
+                            <span class="indic" onclick="irSlide(2)"></span>
+                        </div>
+                    </div>
+
+                    <!-- MENU PRINCIPAL -->
+                    <div class="menuPrincipal">
+                    <h2>Menu Principal</h2>
+                    <div class="opacoes">
+                        <button class="opcao" onclick="irPara('meus-animais')">
+                            <span class="icone">🐾</span>
+                            <span>Meus pets</span>
+                        </button>
+                        <button class="opcao" onclick="irPara('agenda')">
+                            <span class="icone">📅</span>
+                            <span>Agendas</span>
+                        </button>
+                        <button class="opcao" onclick="irPara('cadastro')">
+                            <span class="icone">📋</span>
+                            <span>Cadastro animal</span>
+                        </button>
+                        <button class="opcao" onclick="irPara('faq')">
+                            <span class="icone">❓</span>
+                            <span>Perguntas frequentes</span>
+                        </button>
+                        <button class="opcao" onclick="irPara('castracao')">
+                            <span class="icone">📝</span>
+                            <span>Castração do animal</span>
+                        </button>
+                        <button class="opcao" onclick="irPara('solicitacoes')">
+                            <span class="icone">✉️</span>
+                            <span>Solicitações</span>
+                        </button>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="secao">
+                    <h2>ONG's Parceiras</h2>
+                    <div class="parceiros">
+                        <button class="parceiro" onclick="abrirDetalhes('amor4patas')">
+                            <h3>Amor 4 patas</h3>
+                            <p>Ver detalhes ›</p>
+                        </button>
+                        <button class="parceiro" onclick="abrirDetalhes('amornet')">
+                            <h3>Amor.net</h3>
+                            <p>Ver detalhes ›</p>
+                        </button>
+                        <button class="parceiro" onclick="abrirDetalhes('silveira')">
+                            <h3>Instituição Silveira</h3>
+                            <p>Ver detalhes ›</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="secao">
+                    <h2>Feedbacks</h2>
+                    <div class="feedback">
+                        <div class="usuario">Inácio Silva</div>
+                        <p>Ótimo facilitador Adotar é gostoso é ótimo coitagem sugestão</p>
+                    </div>
+                    <div class="feedback">
+                        <div class="usuario">Juliana Duarte</div>
+                        <p>Ótimo facilitador Adotar é gostoso é ótimo coitagem sugestão</p>
+                    </div>
+                </div>
+            </section>
+
+     <!--SOLICITAÇÕES-->
+     <section id="solicitacoes" class="pagina">
+
+        <div class="volta" onclick="irPara('inicio')"> ← Voltar
+    </div>
+
+
+    <div class="topo">
+
+        <h2>Meus Pedidos</h2>
+
+        <img src="img/banner.png" alt="banner">
+
+    </div>
+
+   <div class="abas">
+
+     <button class="aba ativa" data-tipo="todos">
+        Todos
+        </button>
+
+     <button class="aba" data-tipo="adocao">
+         Adoção
+     </button>
+
+     <button class="aba" data-tipo="castracao">
+        Castração
+     </button>
+
+    </div>
+
+    <div class="grupo" data-tipo="adocao">
+
+        <h2>Adoção 🐾</h2>
+
+        <p>
+            Acompanhe suas solicitações de adoção.
+        </p>
+
+        <div class="pedido">
+
+            <div class="pet">
+
+                <img src="../Ong/Imagens/chico.jpeg">
+
+                <div class="info">
+
+                    <h3>Chico</h3>
+
+                    <p>Gato, Macho, Pequeno</p>
+
+                    <span>Solicitado em 04/05/2026</span>
+
+                </div>
+
+            </div>
+
+            <div class="status roxo">
+                Em análise
+            </div>
+
+            <div class="codigo">
+                2026040520117C34
+            </div>
+
+            <div class="mensagem">
+
+                Sua solicitação ainda está em análise.
+
+            </div>
+
+        </div>
+
+        <div class="pedido">
+
+            <div class="pet">
+
+                <img src="../Ong/Imagens/pipoca.jpeg">
+
+                <div class="info">
+
+                    <h3>Pipoca</h3>
+
+                    <p>Cachorro, Fêmea, Médio</p>
+
+                    <span>Solicitado em 04/05/2026</span>
+
+                </div>
+
+            </div>
+
+            <div class="status verde">
+                Aceito
+            </div>
+
+            <div class="codigo">
+                202608500117C34
+            </div>
+
+            <div class="mensagem">
+
+                Sua solicitação foi aprovada!
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="grupo" data-tipo="castracao">
+
+        <h2>Castração 🩺</h2>
+
+        <p>
+            Acompanhe suas solicitações de castração.
+        </p>
+
+        <div class="pedido">
+
+            <div class="pet">
+
+                <img src="../Ong/Imagens/mia..jpeg">
+
+                <div class="info">
+
+                    <h3>Mia</h3>
+
+                    <p>Gato, Fêmea, Pequeno</p>
+
+                    <span>Solicitado em 04/05/2026</span>
+
+                </div>
+
+            </div>
+
+            <div class="status vermelho">
+                Cancelado
+            </div>
+
+            <div class="codigo">
+                202604052029844C
+            </div>
+
+            <div class="mensagem">
+
+                Não foi possível seguir com sua solicitação.
+
+            </div>
+
+        </div>
+
+        <div class="pedido">
+
+            <div class="pet">
+
+                <img src="../Ong/Imagens/bolt.jpeg">
+
+                <div class="info">
+
+                    <h3>Bolt</h3>
+
+                    <p>Cachorro, Macho, Grande</p>
+
+                    <span>Solicitado em 04/05/2026</span>
+
+                </div>
+
+            </div>
+
+            <div class="status roxo">
+                Em análise
+            </div>
+
+            <div class="codigo">
+                202609620117C34
+            </div>
+
+            <div class="mensagem">
+
+                Sua solicitação está em análise.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+            <!-- CADASTRO DE ANIMAL -->
+            <section id="cadastro" class="pagina">
+                <div class="volta" onclick="irPara('inicio')">← Voltar</div>
+                <h1>Cadastro Animal</h1>
+                
+                <div class="formulario">
+                    <div class="foto">
+                        <input type="file" id="inputFoto" accept="image/*" onchange="carregarFoto(event)">
+                        <div class="areaFoto" id="areaFoto">
+                            <span>Clique para adicionar foto</span>
+                        </div>
+                    </div>
+
+                    <div class="campos">
+                        <div class="campo">
+                            <label>Nome:</label>
+                            <input type="text" id="nome" placeholder="Nome do animal">
+                        </div>
+
+                        <div class="linhaCampos">
+                            <div class="campo">
+                                <label>Idade:</label>
+                                <input type="number" id="idade" placeholder="0">
+                            </div>
+                            <div class="campo">
+                                <label>Tipo:</label>
+                                <select id="tipo">
+                                    <option>Selecione...</option>
+                                    <option>Cão</option>
+                                    <option>Gato</option>
+                                </select>
+                            </div>
+                            <div class="campo">
+                                <label>Raça:</label>
+                                <input type="text" id="raca" placeholder="Raça">
+                            </div>
+                        </div>
+
+                        <div class="linhaCampos">
+                            <div class="campo">
+                                <label>Sexo:</label>
+                                <div class="radio">
+                                    <label><input type="radio" name="sexo" value="Macho"> Macho</label>
+                                    <label><input type="radio" name="sexo" value="Fêmea"> Fêmea</label>
+                                </div>
+                            </div>
+                            <div class="campo">
+                                <label>Porte:</label>
+                                <div class="radio">
+                                    <label><input type="radio" name="porte" value="Pequeno"> Pequeno</label>
+                                    <label><input type="radio" name="porte" value="Médio"> Médio</label>
+                                    <label><input type="radio" name="porte" value="Grande"> Grande</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label>Descrição do animal:</label>
+                            <textarea id="descricao" placeholder="Descreva características, hábitos, etc..."></textarea>
+                        </div>
+
+                        <div class="linhaCampos">
+                            <div class="campo">
+                                <label>Vacinação:</label>
+                                <select id="vacinacao">
+                                    <option>Selecione o status</option>
+                                    <option>Vacinado</option>
+                                    <option>Não vacinado</option>
+                                </select>
+                            </div>
+                            <div class="campo">
+                                <label>Castração:</label>
+                                <select id="statusCastracao">
+                                    <option>Selecione o status</option>
+                                    <option>Castrado</option>
+                                    <option>Não castrado</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="aviso">
+                        <p><strong>⚠️ Responsabilidade da ONG</strong></p>
+                        <p>Ao cadastrar um animal aqui, você se compromete a fornecer informações precisas e mantê-las atualizadas.</p>
+                    </div>
+
+                    <button class="enviar" onclick="enviarCadastro()">🐾 Cadastrar pet</button>
+                </div>
+            </section>
+
+            <!-- CONFIRMAÇÃO DO CADASTRO -->
+            <section id="confirmacao" class="pagina">
+                <div class="caixaSucesso">
+                    <h1>Cadastro realizado com sucesso !!</h1>
+                    <p>Agora o seu animalzinho está disponível para adoção!</p>
+                    <button class="voltarInicio" onclick="irPara('inicio')">Voltar para página inicial</button>
+                     <button class="maisAnimais" onclick="irPara('meus-animais')">ir para meus animais</button>
+                </div>
+            </section>
+
+
+            <!-- MEUS ANIMAIS -->
+            <section id="meus-animais" class="pagina">
+                <div class="volta" onclick="irPara('inicio')">← Voltar</div>
+                <h1>Meus Animais</h1>
+                <div class="grid-animais" id="gridAnimais">
+                    <!-- Preenchido por JavaScript -->
+                </div>
+            </section>
+
+            <!-- DETALHES DO ANIMAL -->
+            <section id="detalhes" class="pagina">
+                <div class="volta" onclick="irPara('meus-animais')">← Voltar</div>
+                <div class="cardDetalhes" id="cardDetalhes">
+                    <!-- Preenchido por JavaScript -->
+                </div>
+            </section>
+
+            <!-- PÁGINA CASTRAÇÃO -->
+            <section id="castracao" class="pagina">
+                <div class="volta" onclick="irPara('inicio')">← Voltar</div>
+
+                <!-- STEP 1: INFORMAÇÕES INICIAIS -->
+                <div id="castracaoStep1" class="castracao-step ativo">
+                    <h1>Agendar castração</h1>
+                    <p class="subtitulo">Ajude seu animal a viver melhor. A castração é um procedimento importante para a saúde do seu pet.</p>
+
+                    <div class="castracao-container-inicial">
+                        <div class="castracao-lado-esq">
+                            <h3>Qual pet quer participar?</h3>
+                            <p style="color: var(--cinza); margin-bottom: 15px; font-size: 13px;">Tabelas descrevem os materiais e características necessários:</p>
+                            <div class="checklist-inicial">
+                                <label class="check-item">
+                                    <span type="checkbox" class="check-icon">☐</span>
+                                    <span>Animal cadastrado na plataforma</span>
+                                </label>
+                                <label class="check-item">
+                                    <span class="check-icon">☐</span>
+                                    <span>Documentação do animal (vacina, carteira)</span>
+                                </label>
+                                <label class="check-item">
+                                    <span class="check-icon">☐</span>
+                                    <span>Responsável disponível no dia</span>
+                                </label>
+                                <label class="check-item">
+                                    <span class="check-icon">☐</span>
+                                    <span>Documento do responsável (RG ou CPF)</span>
+                                </label>
+                                <label class="check-item">
+                                    <span class="check-icon">☐</span>
+                                    <span>Comprovante de endereço</span>
+                                </label>
+                                <label class="check-item">
+                                    <span class="check-icon">☐</span>
+                                    <span>Clínicas parceiras disponíveis</span>
+                                </label>
+                                <label class="check-item">
+                                    <span class="check-icon">☐</span>
+                                    <span>Cálculo de compatibilidade</span>
+                                </label>
+                                <label class="check-item">
+                                    <span class="check-icon">☐</span>
+                                    <span>Animal fez jejum de 8 horas</span>
+                                </label>
+                                <label class="check-item">
+                                    <span class="check-icon">☐</span>
+                                    <span>Levar colinha ou peitoral até CPF</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="castracao-lado-dir">
+                            <div class="box-importante">
+                                <h4>⚠️ Importante</h4>
+                                <p>A castração é um procedimento seguro e fundamental para a saúde do animal. Prevenimos cânceres, problemas reprodutivos, reduzimos agressividade e evitamos filhotes indesejados. A cirurgia é feita sob anestesia segura e com recuperação rápida.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="botao-continuar" onclick="irParaStep2Castracao()">Continuar →</button>
+                </div>
+
+                <!-- STEP 2: DADOS DO TUTOR -->
+                <div id="castracaoStep2" class="castracao-step">
+                    <h1>Dados do tutor</h1>
+                    <p class="subtitulo">Informações do responsável pelo animal</p>
+
+                    <div class="castracao-formulario">
+                        <div class="castracao-secao">
+                            <div class="linhaCampos">
+                                <div class="campo">
+                                    <label>Nome completo:</label>
+                                    <input type="text" id="tutorNome" placeholder="Seu nome completo" class="campo-input">
+                                </div>
+                                <div class="campo">
+                                    <label>E-mail:</label>
+                                    <input type="email" id="tutorEmail" placeholder="seu@email.com" class="campo-input">
+                                </div>
+                                <div class="campo">
+                                    <label>Telefone:</label>
+                                    <input type="tel" id="tutorTelefone" placeholder="(XX) XXXXX-XXXX" class="campo-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="castracao-secao">
+                            <h3>Para confirmarmos sua identidade, por favor nos envie:</h3>
+                            <div class="identificacao-container">
+                                <div class="id-card">
+                                    <div class="id-icone">✓</div>
+                                    <h4>Comprovação de residência</h4>
+                                    <p>Conta de luz, água, telefone ou contrato de aluguel</p>
+                                    <button class="btn-upload" onclick="alert('Upload de arquivo')">📎 Enviar arquivo</button>
+                                </div>
+                                <div class="id-card destaque">
+                                    <div class="id-icone">👤</div>
+                                    <h4>Documento de identificação</h4>
+                                    <p>RG, CNH ou Passaporte</p>
+                                    <button class="btn-upload" onclick="alert('Upload de arquivo')">📎 Enviar arquivo</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="castracao-secao">
+                            <h3>Qual é o "animal pet"?</h3>
+                            <p style="color: var(--cinza); margin-bottom: 15px; font-size: 13px;">Selecione o animal que deseja castrar</p>
+                            <select id="petCastracaoSelecionado" class="campo-input">
+                                <option value="">Selecione seu pet...</option>
+                            </select>
+
+                            <div class="linhaCampos" style="margin-top: 15px;">
+                                <div class="campo">
+                                    <label>Tamanho:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="tamanhoPet"> Pequeno</label>
+                                        <label><input type="radio" name="tamanhoPet"> Médio</label>
+                                        <label><input type="radio" name="tamanhoPet"> Grande</label>
+                                    </div>
+                                </div>
+                                <div class="campo">
+                                    <label>Sexo:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="sexoPet"> Macho</label>
+                                        <label><input type="radio" name="sexoPet"> Fêmea</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="botoes-navegacao">
+                        <button class="btn-voltar" onclick="irParaStep1Castracao()">← Voltar</button>
+                        <button class="botao-continuar" onclick="irParaStep3Castracao()">Continuar →</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: AGENDAMENTO -->
+                <div id="castracaoStep3" class="castracao-step">
+                    <h1>Detalhes do agendamento</h1>
+                    <p class="subtitulo">Escolha a data e horário mais convenientes</p>
+
+                    <div class="agendamento-container">
+                        <div class="agendamento-lado-esq">
+                            <h3>Selecione a data</h3>
+                            <div id="calendarioCastracao" class="calendario-castracao"></div>
+                        </div>
+
+                        <div class="agendamento-lado-dir">
+                            <div class="secao-periodos">
+                                <h3>Qual horário prefere?</h3>
+                                <div class="periodos-opcoes">
+                                    <label class="radio-box">
+                                        <input type="radio" name="periodoCastracao" value="matutino">
+                                        <span>☀️ Matutino (7h - 12h)</span>
+                                    </label>
+                                    <label class="radio-box">
+                                        <input type="radio" name="periodoCastracao" value="vespertino">
+                                        <span>🌤️ Vespertino (12h - 18h)</span>
+                                    </label>
+                                    <label class="radio-box">
+                                        <input type="radio" name="periodoCastracao" value="noturno">
+                                        <span>🌙 Noturno (18h - 22h)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="secao-duracao">
+                                <h3>É a data de término?</h3>
+                                <div class="duracao-opcoes">
+                                    <label class="radio-box">
+                                        <input type="radio" name="duracao" value="1dia">
+                                        <span>1 dia</span>
+                                    </label>
+                                    <label class="radio-box">
+                                        <input type="radio" name="duracao" value="2dias">
+                                        <span>2 dias</span>
+                                    </label>
+                                    <label class="radio-box">
+                                        <input type="radio" name="duracao" value="3dias">
+                                        <span>3 dias</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="botoes-navegacao">
+                        <button class="btn-voltar" onclick="irParaStep2Castracao()">← Voltar</button>
+                        <button class="botao-continuar" onclick="finalizarAgendamentoCastracao()">Confirmar agendamento</button>
+                    </div>
+                </div>
+
+                <!-- STEP 4: SUCESSO -->
+                <div id="castracaoStep4" class="castracao-step">
+                    <div class="caixa-sucesso-castracao">
+                        <div class="sucesso-icone">✓</div>
+                        <h1>Seu agendamento foi realizado com sucesso!</h1>
+                        <p class="codigo-agendamento" id="codigoAgendamento">2026EDC7763📋</p>
+                        <p class="mensagem-sucesso">Salve agendamento em seu calendário ou na sua casa. Nenhuma dúvida até aqui?</p>
+                        <div class="botoes-sucesso">
+                            <button class="btn-voltar-inicio" onclick="irPara('inicio')">← Voltar para inicial</button>
+                            <button class="btn-meus-agendamentos" onclick="irPara('agenda')">Ver 📅 Meus agendamentos</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PÁGINA AGENDA -->
+            <section id="agenda" class="pagina">
+                <div class="volta" onclick="irPara('inicio')">← Voltar</div>
+                <h1>📅 Minha Agenda</h1>
+                <p class="subtitulo">Acompanhe seus agendamentos e compromissos</p>
+
+                <div class="agenda-container">
+                    <div class="agenda-sidebar">
+                        <div class="calendario-mini" id="calendarioMini"></div>
+                    </div>
+
+                    <div class="agenda-main">
+                        <div class="agenda-filtros">
+                            <button class="filtro-btn ativo" onclick="filtrarAgenda('todos')">Todos</button>
+                            <button class="filtro-btn" onclick="filtrarAgenda('adocao')">🐾 Adoção</button>
+                            <button class="filtro-btn" onclick="filtrarAgenda('castracao')">🩺 Castração</button>
+                            <button class="filtro-btn" onclick="filtrarAgenda('consulta')">🏥 Consulta</button>
+                        </div>
+
+                        <div class="agenda-eventos" id="agendaEventos">
+                            <!-- Preenchido por JS -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PÁGINA PERGUNTAS FREQUENTES -->
+            <section id="faq" class="pagina">
+                <div class="volta" onclick="irPara('inicio')">← Voltar</div>
+                <h1>❓ Perguntas Frequentes</h1>
+                <p class="subtitulo">Encontre respostas para as dúvidas mais comuns</p>
+
+                <div class="faq-search">
+                    <input type="text" id="faqSearch" placeholder="🔍 Buscar pergunta..." onkeyup="filtrarFaq()">
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-categoria">
+                        <h3>🐾 Sobre Adoção</h3>
+                        <div class="faq-items">
+                            <div class="faq-item" data-faq="adocao">
+                                <div class="faq-header" onclick="abrirFaq(this)">
+                                    <span class="faq-titulo">Como funciona o processo de adoção?</span>
+                                    <span class="faq-arrow">▼</span>
+                                </div>
+                                <div class="faq-resposta">
+                                    <p>O processo de adoção na Arca é simples e seguro. Você seleciona o animal desejado, preenche um formulário de solicitação, passa por uma análise da nossa equipe e, se aprovado, recebe o animal. Levamos em conta o bem-estar do animal acima de tudo.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item" data-faq="adocao">
+                                <div class="faq-header" onclick="abrirFaq(this)">
+                                    <span class="faq-titulo">Preciso ter documentos para adotar?</span>
+                                    <span class="faq-arrow">▼</span>
+                                </div>
+                                <div class="faq-resposta">
+                                    <p>Sim, você precisará apresentar um documento de identidade válido (RG, CNH ou Passaporte). Isso é importante para garantir a segurança do animal e a integridade do processo de adoção.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item" data-faq="adocao">
+                                <div class="faq-header" onclick="abrirFaq(this)">
+                                    <span class="faq-titulo">Há taxa de adoção?</span>
+                                    <span class="faq-arrow">▼</span>
+                                </div>
+                                <div class="faq-resposta">
+                                    <p>A adoção é gratuita! Todos os animais saem vacinados, desparasitados e com microchip. Isso está incluído na adoção, sem custo adicional ao adotante.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item" data-faq="adocao">
+                                <div class="faq-header" onclick="abrirFaq(this)">
+                                    <span class="faq-titulo">Posso devolver o animal se não der certo?</span>
+                                    <span class="faq-arrow">▼</span>
+                                </div>
+                                <div class="faq-resposta">
+                                    <p>Sim, entendemos que nem sempre a adoção funciona à primeira. Se o animal não se adaptar, você pode devolvê-lo sem problemas. Faremos uma entrevista de acompanhamento para entender melhor o que não funcionou.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-categoria">
+                        <h3>🩺 Sobre Castração</h3>
+                        <div class="faq-items">
+                            <div class="faq-item" data-faq="castracao">
+                                <div class="faq-header" onclick="abrirFaq(this)">
+                                    <span class="faq-titulo">Por que castrar meu animal?</span>
+                                    <span class="faq-arrow">▼</span>
+                                </div>
+                                <div class="faq-resposta">
+                                    <p>A castração traz diversos benefícios: previne cânceres reprodutivos, reduz agressividade, evita problemas de saúde no futuro e ajuda a controlar a população de animais abandonados. É um procedimento seguro e recomendado por veterinários.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item" data-faq="castracao">
+                                <div class="faq-header" onclick="abrirFaq(this)">
+                                    <span class="faq-titulo">A que idade devo castrar meu animal?</span>
+                                    <span class="faq-arrow">▼</span>
+                                </div>
+                                <div class="faq-resposta">
+                                    <p>O ideal é realizar a castração entre 6 meses e 1 ano de idade. Porém, animais adultos também podem ser castrados sem problemas. Consulte um veterinário para a melhor idade específica para seu pet.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item" data-faq="castracao">
+                                <div class="faq-header" onclick="abrirFaq(this)">
+                                    <span class="faq-titulo">Qual é o tempo de recuperação?</span>
+                                    <span class="faq-arrow">▼</span>
+                                </div>
+                                <div class="faq-resposta">
+                                    <p>O tempo de recuperação varia entre 7 a 14 dias. Durante esse período, é importante manter o animal em repouso, evitar exercícios intensos e manter a ferida limpa e seca. Forneceremos instruções completas pós-operatório.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item" data-faq="castracao">
+                                <div class="faq-header" onclick="abrirFaq(this)">
+                                    <span class="faq-titulo">O meu animal vai engordar após castração?</span>
+                                    <span class="faq-arrow">▼</span>
+                                </div>
+                                <div class="faq-resposta">
+                                    <p>É comum uma leve mudança no metabolismo após castração, mas com alimentação adequada e exercícios regulares, seu animal manterá peso saudável. Recomendamos consultar sobre nutrição pós-castração.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-categoria">
+                        <h3>❓ Geral</h3>
+                        <div class="faq-items">
+                            <div class="faq-item" data-faq="geral">
+                                <div class="faq-header" onclick="abrirFaq(this)">
+                                    <span class="faq-titulo">Como posso me tornar parceiro da Arca?</span>
+                                    <span class="faq-arrow">▼</span>
+                                </div>
+                                <div class="faq-resposta">
+                                    <p>Se você é uma ONG ou veterinária interessada em parceria, entre em contato conosco através do e-mail contato@arca.com.br. Adoraríamos colaborar para ajudar mais animais!</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item" data-faq="geral">
+                                <div class="faq-header" onclick="abrirFaq(this)">
+                                    <span class="faq-titulo">Como denunciar maus-tratos?</span>
+                                    <span class="faq-arrow">▼</span>
+                                </div>
+                                <div class="faq-resposta">
+                                    <p>Se você testemunhar maus-tratos a um animal, denuncie imediatamente à Polícia Civil, PROCON ou ao órgão de proteção animal da sua região. Também pode entrar em contato conosco para orientação.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item" data-faq="geral">
+                                <div class="faq-header" onclick="abrirFaq(this)">
+                                    <span class="faq-titulo">Qual é o horário de funcionamento?</span>
+                                    <span class="faq-arrow">▼</span>
+                                </div>
+                                <div class="faq-resposta">
+                                    <p>Funcionamos de segunda a sábado, das 9h às 18h. Domingos funcionamos de 10h às 14h. Feriados estamos fechados. Você também pode agendar visitas especiais entrando em contato.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- RODAPÉ -->
+        <footer class="rodape"></footer>
+    </div>
+
+    <script src="../Ong/script.js"></script>
+</body>
+</html>
