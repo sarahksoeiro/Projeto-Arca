@@ -1,147 +1,145 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arca - Início</title>
+
+    <link rel="stylesheet" href="../ADM_denúncias/style.css">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="../ADM_denúncias/style.css">
 </head>
 
-<header>
+<body>
+
+    <header>
         <div class="logo">
             <h1>Arca</h1>
-            <img src="../ADM_denúncias/img/icone_pata.png" alt="Logo de pata de animal">
+            <img src="../ADM_denúncias/img/icone_pata.png" alt="Logo de pata">
         </div>
 
         <div class="icones">
-            <img src="../ADM_denúncias/img/icone_headerADM.png" alt="Ícones da header">
+            <img src="../ADM_denúncias/img/icone_headerADM.png" alt="Ícones do cabeçalho">
         </div>
     </header>
-    
-<main>
 
-    <body>
+    <section class="secaoInicial">
 
-        <section class="home-container">
+        <!-- ESQUERDA -->
+        <div class="ADMEsquerdo">
 
-            <!-- ESQUERDA -->
-            <div class="home-esquerda">
+            <div class="carrossel">
 
-                <div class="banner-area">
+                <button class="seta esquerda">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
 
-                    <button class="arrow-banner">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
+                <img src="carroselarca.webp" alt="Banner Arca" class="banner">
 
-                    <img src="carroselarca.webp" alt="Banner Arca" class="banner">
+                <button class="seta direita">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
 
-                    <button class="arrow-banner">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
+            </div>
+
+            <div class="feedbacks">
+
+                <div class="feedback-card">
+
+                    <i class="fa-regular fa-circle-user"></i>
+
+                    <div>
+                        <h3>Cintia S Barcellos</h3>
+
+                        <p>
+                            "Sensacional! A Arca é uma plataforma incrível para quem ama os animais
+                            e quer ajudar. A navegação é fácil e intuitiva."
+                        </p>
+                    </div>
 
                 </div>
 
-                <div class="feedbacks">
+                <div class="feedback-card">
 
-                    <div class="feedback-card">
+                    <i class="fa-regular fa-circle-user"></i>
 
-                        <i class="fa-regular fa-circle-user"></i>
+                    <div>
+                        <h3>Rodrigo Rochette</h3>
 
-                        <div>
-                            <h3>Cintia S Barcellos</h3>
-
-                            <p>
-                                "Sensacional! A Arca é uma plataforma incrível para quem ama os animais e quer ajudar. A
-                                navegação é fácil e intuitiva, e a variedade de serviços oferecidos é impressionante.
-                                Recomendo a todos que se importam com o bem-estar animal!"
-                            </p>
-                        </div>
-
+                        <p>
+                            "Gostei bastante da Arca, achei a plataforma fácil de usar e bem organizada."
+                        </p>
                     </div>
 
-                    <div class="feedback-card">
+                </div>
 
-                        <i class="fa-regular fa-circle-user"></i>
+                <div class="feedback-card">
 
-                        <div>
-                            <h3>Rodrigo Rochette</h3>
+                    <i class="fa-regular fa-circle-user"></i>
 
-                            <p>
-                                "Gostei bastante da Arca, achei a plataforma
-                                fácil de usar e bem organizada. A proposta
-                                é muito boa e o visual ficou agradável."
-                            </p>
-                        </div>
+                    <div>
+                        <h3>Manoela Azevedo</h3>
 
-                    </div>
-                    <div class="feedback-card">
-
-                        <i class="fa-regular fa-circle-user"></i>
-
-                        <div>
-                            <h3>Manoela Azevedo</h3>
-
-                            <p>
-                                "Adotei o meu filhote na Arca, foi uma experiência incrível!"
-                            </p>
-                        </div>
-
+                        <p>
+                            "Adotei o meu filhote na Arca, foi uma experiência incrível!"
+                        </p>
                     </div>
 
                 </div>
 
             </div>
 
-            <!-- DIREITA -->
-            <div class="home-direita">
+        </div>
 
-                <div class="menu-grid">
+        <!-- DIREITA -->
+        <div class="ADMDireito">
 
-                    <a href="#" class="menu-card">
-                        <i class="fa-solid fa-stethoscope"></i>
-                        <span><a href="../Login_castração/castracao.html" class="letrabotao">Serviços de castração</a></span>
-                    </a>
+            <div class="botoesEmLinha">
 
-                    <a href="telacatalogodeanimais.html" class="menu-card">
-                        <i class="fa-solid fa-shield-dog"></i>
-                        <span href="telacatalogodeanimais.html" class="letrabotao">Adoção</span>
-                    </a>
+                <a href="../Login_castração/castracao.html" class="botoes3">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    <span>Serviços de castração</span>
+                </a>
 
-                    <a href="#" class="menu-card">
-                        <i class="fa-solid fa-bell"></i>
-                        <span>Atendimentos</span>
-                    </a>
-
-                    <a href="#" class="menu-card">
-                        <i class="fa-solid fa-hand-holding-heart"></i>
-                        <span><a href="../ADM_denúncias/denuncia1.html" class="letrabotao">Denúncias</a></span>
-                    </a>
-
-                    <a href="#" class="menu-card">
-                        <i class="fa-solid fa-comments"></i>
-                        <span>Perguntas frequentes</span>
-                    </a>
-
-                    <a href="#" class="menu-card">
-                        <i class="fa-solid fa-paw"></i>
-                        <span>Meus pets</span>
-                    </a>
-
-                </div>
+                <a href="telacatalogodeanimais.html" class="botoes3">
+                    <i class="fa-solid fa-shield-dog"></i>
+                    <span>Adoção</span>
+                </a>
 
             </div>
 
-        </section>
+            <div class="botoesEmLinha">
 
-</main>
-<title>Document</title>
+                <a href="#" class="botoes3">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Atendimentos</span>
+                </a>
 
+                <a href="../ADM_denúncias/denuncia1.html" class="botoes3">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                    <span>Denúncias</span>
+                </a>
 
+            </div>
 
+            <div class="botoesEmLinha">
+
+                <a href="#" class="botoes3">
+                    <i class="fa-solid fa-comments"></i>
+                    <span>Perguntas frequentes</span>
+                </a>
+
+                <a href="#" class="botoes3">
+                    <i class="fa-solid fa-paw"></i>
+                    <span>Meus pets</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
 
 </body>
 
