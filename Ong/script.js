@@ -119,6 +119,12 @@ let animaisDb = [
     },
 ];
 
+const dadosSalvos = localStorage.getItem("animaisDb");
+
+if (dadosSalvos) {
+    animaisDb = JSON.parse(dadosSalvos);
+}
+
 // VARIÁVEL PARA ARMAZENAR ANIMAL SELECIONADO
 let animalSelecionado = null;
 
@@ -192,7 +198,7 @@ function enviarCadastro() {
     
     // CRIA NOVO ANIMAL
     const novoAnimal = {
-        id: animaisDb.length + 1,
+        id: Date.now(),
         nome: nome,
         tipo: tipo,
         raca: raca,
@@ -205,8 +211,10 @@ function enviarCadastro() {
         fotos: [tipo === 'Cão' ? '🐕' : '🐱']
     };
     
-    // ADICIONA À BASE DE DADOS
+    // ADICIONA À BASE DE DADOS 
     animaisDb.push(novoAnimal);
+
+    salvarDados();
     
     // LIMPA O FORMULÁRIO
     document.getElementById('nome').value = '';
@@ -295,7 +303,7 @@ function atualizarCarrosselDetalhe(animalId, total) {
 function carregarMeusAnimais(){
     const grid = document.getElementById('gridAnimais');
     grid.innerHTML = '';
-    animaisDb.forEach(animal => {
+    animaisDb.forEach((animal,index) => {
         const primeiraFoto = Array.isArray(animal.fotos) ? animal.fotos[0] : (animal.foto || '🐾');
         const fotoHTML = obterFotoHTML(primeiraFoto);
         grid.innerHTML += `
@@ -307,7 +315,19 @@ function carregarMeusAnimais(){
                     <h3>${animal.nome}</h3>
                     <p>${animal.raca}</p>
                 </div>
-                <button class="botaoGrid">Ver Detalhes</button>
+                <button class="botaoGrid">
+                    Ver Detalhes
+                </button>
+
+                <button
+                    onclick="event.stopPropagation();editarAnimal(${index})">
+                     Editar
+                </button>
+
+                <button
+                    onclick="event.stopPropagation();excluirAnimal(${index})">
+                     Excluir
+                </button>
             </div>
         `;
     });
@@ -458,7 +478,7 @@ function renderizarCalendarioCastracao() {
     for (let dia = 1; dia <= diasMes; dia++) {
         const diaDate = new Date(ano, mes, dia);
         const ehPassado = diaDate < new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate());
-        html += `<div class="dia-calendario ${ehPassado ? 'passado' : ''}" onclick="selecionarDataCastracao(${dia})">${dia}</div>`;
+        html += `<div class="dia-calendario ${ehPassado ? 'passado' : ''}" onclick="selecionarDataCastracao(event)"">${dia}</div>`;
     }
     
     html += '</div>';
@@ -677,3 +697,39 @@ document.querySelectorAll('.check-item').forEach(item => {
         }
     });
 });
+
+function excluirAnimal(index){
+
+    animaisDb.splice(index,1);
+
+    salvarDados();
+
+    carregarMeusAnimais();
+
+    alert("Animal excluído!");
+}
+
+function editarAnimal(index){
+
+    let novoNome = prompt(
+        "Digite o novo nome:",
+        animaisDb[index].nome
+    );
+
+    if(novoNome){
+
+        animaisDb[index].nome = novoNome;
+
+        salvarDados();
+
+        carregarMeusAnimais();
+
+        alert("Animal atualizado!");
+    }
+}
+
+function salvarDados() {
+    localStorage.setItem(
+        "animaisDb",
+        JSON.stringify(animaisDb)
+    );
