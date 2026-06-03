@@ -733,3 +733,4 @@ function salvarDados() {
         "animaisDb",
         JSON.stringify(animaisDb)
     );
+}
