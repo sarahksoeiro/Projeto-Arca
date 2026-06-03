@@ -306,13 +306,13 @@ a.arca{
 }
 
 /*PÁGINA 1 ADM*/
-/* COLE ESTE BLOCO NO LUGAR DELA: */
+/* ========= CONFIGURAÇÃO DO NOVO HEADER ========= */
 .cabecalho-principal {
     background-color: var(--header-bg);
     padding: 12px 28px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Alinha logo à esquerda e ícones à direita */
     box-shadow: var(--sombra);
     width: 100%;
 }
@@ -334,16 +334,18 @@ a.arca{
     display: block;
 }
 
+/* ========= AJUSTE DA SEÇÃO INICIAL (CARROSSEL + MENU LADO A LADO) ========= */
 .secaoInicial {
     display: grid;
-    grid-template-columns: 2fr 1.2fr; 
+    grid-template-columns: 2fr 1.2fr; /* Divide o espaço: carrossel maior, menu menor */
     gap: 28px;
     padding: 24px;
     margin-bottom: 28px;
-    max-width: 100%; 
+    max-width: 100%; /* Mudado de 500px para 100% para poder expandir na tela */
     width: 100%;
 }
 
+/* Garante comportamento fluido para o carrossel */
 .carrossel {
     position: relative;
     width: 100%;
@@ -673,4 +675,3 @@ a.arca{
 .servico{
     max-width: 420px;
 }
-
