@@ -538,3 +538,50 @@ main {
     font-size: 14px;
     font-weight: bold;
 }
+.cardPrincipal{
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 30px;
+}
+
+.banner{
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+.feedbacks{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feedback-card{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 25px;
+
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+
+    background-color: white;
+}
+
+.feedback-card i{
+    font-size: 4rem;
+    color: #666;
+}
+
+.feedback-card h3{
+    margin-bottom: 10px;
+}
+
+.feedback-card p{
+    margin: 0;
+    line-height: 1.5;
+}
