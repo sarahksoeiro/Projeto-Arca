@@ -28,20 +28,25 @@
 
         <!-- ESQUERDA -->
         <div class="ADMEsquerdo">
-
             <div class="carrossel">
-
-                <button class="seta esquerda">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-
-                <img src="carroselarca.webp" alt="Banner Arca" class="banner">
-
-                <button class="seta direita">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-
-            </div>
+                <div class="imagens">
+                    <div class="slide">
+                        <img src="img/propaganda01.png" alt="Imagem 1 do carrossel">
+                    </div>
+                    <div class="slide">
+                        <img src="img/propaganda02.png" alt="Imagem 2 do carrossel">
+                    </div>
+                    <div class="slide">
+                        <img src="img/propaganda03.png" alt="Imagem 3 do carrossel">
+                    </div>
+                </div>
+                <button class="seta esquerda" onclick="mudarSlide(-1)">‹</button>
+                <button class="seta direita" onclick="mudarSlide(1)">›</button>
+                <div class="indicadores">
+                    <span class="indic ativo" onclick="irSlide(0)"></span>
+                    <span class="indic" onclick="irSlide(1)"></span>
+                    <span class="indic" onclick="irSlide(2)"></span>
+                </div>
 
         </div>
 
