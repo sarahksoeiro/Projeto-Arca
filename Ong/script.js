@@ -378,33 +378,6 @@ function indisponivel() {
     alert('Esta funcionalidade ainda não está disponível.');
 }
 
-// FUNÇÕES DOS PAINÉIS (NOTIFICAÇÕES, CONFIGURAÇÕES, PERFIL)
-function abrirPainel(id) {
-    // Fecha qualquer outro painel aberto
-    document.querySelectorAll('.painel-overlay').forEach(p => p.classList.remove('ativo'));
-    document.getElementById(id).classList.add('ativo');
-    // Remove badge de notificações ao abrir
-    if (id === 'painel-notificacoes') {
-        const badge = document.getElementById('badgeNotif');
-        if (badge) badge.style.display = 'none';
-    }
-}
-
-function fecharPainel(id) {
-    document.getElementById(id).classList.remove('ativo');
-}
-
-function fecharPainelOverlay(event, id) {
-    // Fecha apenas se clicar no overlay escuro (fora do painel)
-    if (event.target === document.getElementById(id)) {
-        fecharPainel(id);
-    }
-}
-
-function alternarToggle(btn) {
-    btn.classList.toggle('on');
-}
-
 // ========= CASTRAÇÃO =========
 function carregarPetsParaCastracao() {
     const select = document.getElementById('petCastracaoSelecionado');
