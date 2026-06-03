@@ -332,6 +332,10 @@ function carregarMeusAnimais(){
         `;
     });
 }
+function alternarToggle(btn) {
+    btn.classList.toggle('on');
+}
+
 
 // FUNÇÃO PARA ABRIR DETALHES DO ANIMAL (RENOMEADA PARA EVITAR CONFLITO)
 function abrirDetalhesAnimal(id){
