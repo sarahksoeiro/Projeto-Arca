@@ -310,7 +310,7 @@ a.arca{
     border-radius: 8px;
     box-shadow: 0 2px 8px var(--corSombra);
     margin-bottom: 30px;
-    align-items:stretch;
+    align-items:flex-start;
     flex-wrap: wrap;
 }
 .ADMEsquerdo {
@@ -321,6 +321,7 @@ a.arca{
     align-items:stretch;
     justify-content: center;
     flex-wrap: wrap;
+    width:55%;
 }
 .ADMDireito{
     flex:1;
@@ -329,6 +330,7 @@ a.arca{
     justify-content:center;
     gap:15px;
     flex-wrap: wrap;
+    width:45%;
 }
 .carrossel {
     gap:15px;
