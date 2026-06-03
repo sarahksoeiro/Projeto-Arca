@@ -5,7 +5,7 @@
 }
 :root{
     --corBody:rgb(245, 245, 245);
-    --corHeader: white;
+    --corHeader: #98C27A;
     --corBotao:#a8c686;
     --corBotaoHover:rgb(136, 182, 106);
     --corSombra:rgba(0, 0, 0, 0.1);
@@ -32,6 +32,7 @@ header {
     border-radius: 10px;
     margin-bottom: 40px;
     box-shadow: 0 2px 10px var(--corSombra);
+    
 }
 a.arca{
     color: black;
