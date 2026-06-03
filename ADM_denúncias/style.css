@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 :root{
+    //FUNDOS
+    --corprincipal:#fbf1c5;
+    --cor
+    
     --corBody:rgb(245, 245, 245);
     --corHeader: #98C27A;
     --corBotao:#a8c686;
