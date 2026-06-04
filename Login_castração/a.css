@@ -37,27 +37,7 @@ body {
     min-width: 150px;
     min-height: 150px;
 }
-    
-.tela {
-    max-width: 500px;
-    max-height: min-content;
-    padding: 60px;
-    border: 1px solid rgb(204, 204, 204);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: var(--corCard);
-    border-radius: var(--bigRadius);
-    gap: 60px;
-    flex-wrap: wrap;
-    
-}
-input, select, button {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 8px;
-    border: 1px solid rgb(170, 170, 170);
-    border-radius: var(--smallRadius);
-}
+ 
 button {
     background-color: var(--corBotão);
     border: none;

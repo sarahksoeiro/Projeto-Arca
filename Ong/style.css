@@ -181,11 +181,12 @@ body {
 
 .secaoInicial {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1.2fr; 
     gap: 28px;
     padding: 24px;
     margin-bottom: 28px;
-    max-width:500px;
+    max-width: 100%; 
+    width: 100%;
 }
 
 .secao {
@@ -1990,4 +1991,46 @@ body {
         width: 100%;
         text-align: center;
     }
+}
+
+header {
+    background-color: var(--header-bg) !important;
+    padding: 12px 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-shadow: var(--sombra) !important;
+    width: 100% !important;
+}
+
+header .logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+header .logo h1 {
+    color: black !important;
+    margin: 0 !important;
+}
+
+header .logo img {
+    height: 32px !important;
+    width: auto !important;
+}
+
+header .icones img {
+    height: 36px !important;
+    width: auto !important;
+    display: block !important;
+}
+
+.carrossel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--fundo-card);
 }
